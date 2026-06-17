@@ -29,3 +29,24 @@ Private Subnet:
 
 Learning:
 Subnets divide a VPC into smaller logical networks and improve security and organization.
+
+
+
+## Phase 3 - Internet Connectivity
+
+Created Internet Gateway:
+- Production-IGW
+
+Attached IGW to Production-VPC
+
+Created Route Table:
+- Public-RT
+
+Added Route:
+- 0.0.0.0/0 → Internet Gateway
+
+Associated:
+- Public-Subnet → Public-RT
+
+Learning:
+A subnet becomes public only when a route to an Internet Gateway exists.
