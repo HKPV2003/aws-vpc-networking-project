@@ -1,14 +1,30 @@
 AWS Cloud
-│
+│ 
 └── Production-VPC (10.0.0.0/16)
-    │
+    │ 
     ├── Internet Gateway
-    │
+    │ 
     ├── Public Route Table
-    │    └── 0.0.0.0/0 → IGW
-    │
-    ├── Public-Subnet
-    │    └── 10.0.1.0/24
-    │
-    └── Private-Subnet
-         └── 10.0.2.0/24
+    │   └── 0.0.0.0/0 → IGW
+    │ 
+    ├── Public-Subnet (10.0.1.0/24)
+    │   ├── Public-WebServer
+    │   │   ├── Private IP: 10.0.1.220
+    │   │   ├── Apache HTTP Server
+    │   │   └── Public Website
+    │   │  
+    │   └── WebServer-SG
+    │       ├── SSH (22)
+    │       └── HTTP (80)
+    │ 
+    ├── Private-Subnet (10.0.2.0/24)
+    │   │ 
+    │   ├── Private-AppServer
+    │   │   └── Private IP: 10.0.2.53
+    │   │ 
+    │   └── PrivateServer-SG
+    │       ├── SSH from WebServer-SG
+    │       └── ICMP from WebServer-SG
+    │ 
+    └── Bastion Host Architecture
+        └── Public-WebServer → Private-AppServer
