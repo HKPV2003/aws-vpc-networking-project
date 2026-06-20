@@ -8,7 +8,7 @@ This project demonstrates the design and implementation of a secure AWS VPC arch
 
 ## Architecture Diagram
 
-![Architecture](screenshots/32-final-network-architecture.png)
+![Architecture](screenshots/a.png)
 
 ## Technologies Used
 
