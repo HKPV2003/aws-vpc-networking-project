@@ -45,6 +45,25 @@ This project demonstrates the design and implementation of a secure AWS VPC arch
 - Apache deployment verified
 - Browser access verified
 
+
+## Implementation Steps
+
+1. Created Production VPC (10.0.0.0/16)
+2. Created Public Subnet (10.0.1.0/24)
+3. Created Private Subnet (10.0.2.0/24)
+4. Created and attached Internet Gateway
+5. Configured Public Route Table
+6. Associated Public Subnet with Route Table
+7. Created WebServer Security Group
+8. Launched Public EC2 Instance (Bastion Host)
+9. Installed and configured Apache HTTP Server
+10. Created PrivateServer Security Group
+11. Launched Private EC2 Instance
+12. Configured ICMP and SSH access from Bastion Host
+13. Verified Public-to-Private connectivity using ping
+14. Connected to Private Server through Bastion Host
+15. Verified Apache deployment and website accessibility
+
 ## Project Structure
 
 
@@ -86,3 +105,12 @@ This project demonstrates the design and implementation of a secure AWS VPC arch
 - Security Group best practices
 - Bastion Host implementation
 - Web server deployment on AWS
+
+
+## Future Enhancements
+
+- Add NAT Gateway
+- Implement Network ACLs
+- Configure Application Load Balancer
+- Deploy Multi-AZ Architecture
+- Automate Infrastructure using Terraform
